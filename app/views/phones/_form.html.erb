@@ -1,0 +1,152 @@
+<%= form_with(model: phone, class: "contents") do |form| %>
+  <% if phone.errors.any? %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+      <h2><%= pluralize(phone.errors.count, "error") %> prohibited this phone deal from being added:</h2>
+
+      <ul>
+        <% phone.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+ 
+
+<p class=" font-bold text-2xl mb-2 mt-8"> Display info:</p>
+<div class="shadow pl-8 lg:pl-24 py-4 rounded-xl border-2  bg-white border-gray-200 ">
+  <div class="my-5 ">
+ 
+    <%= form.text_field :name,  placeholder:"Enter name of phone", class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-5/6 lg:w-4/5" %>
+  </div>
+
+  <div class=" shadow rounded-md border border-gray-200 outline-none px-2  mt-2 w-5/6 lg:w-4/5"  >
+   <p class="pt-2 pb-8 font-bold">Supported photo format: JPG, PNG, </p> 
+    <%= form.file_field :photo %>
+  <p class="pt-8 pb-2 text-sm">Maximum upload size: 5mb</p>
+
+  <div class="my-5">
+    
+    <%= form.url_field :youtube, placeholder:"Enter youtube link", class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-4/5"%>
+  </div>
+  </div>
+</div>   
+
+<p class=" font-bold text-2xl mb-2 mt-8"> Phone info:</p>
+ <div class="shadow pl-8 lg:pl-24 py-4 rounded-xl border-2  bg-white border-gray-200 ">
+  <div class="my-5">
+  
+    <%= form.text_field :brand , placeholder:"Brand", class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-4/5" %>
+  </div>
+
+  <div class="my-5">
+   
+    <%= form.text_field :model , placeholder:"Model", class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-4/5" %>
+  </div>
+
+  <div class="my-5">
+    
+    <%= form.text_field :color , placeholder:"Color", class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-4/5" %>
+  </div>
+
+  <div class="my-5">
+    
+    <%= form.text_field :screensize , placeholder:"Screen size", class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-4/5" %>
+  </div>
+
+  <div >
+   <P>Ram</P>
+    <%= form.select :ram , ["512MB", "1GB", "2GB", "4GB", "8GB", "16GB"]%>
+  
+  </div>
+
+  <div class="my-5">
+  <p>Rom</p>
+    <%= form.select :rom, ["8GB", "16GB", "32GB", "64GB", "128GB", "256GB", "512GB"] %>
+   
+  </div>
+
+  <div class="my-5">
+  <p>Battery Type</p>
+    <%= form.select :batterytype, ["Non-removable", "Removable"] %>
+  
+  </div>
+
+  <div class="my-5">
+    <p>Battery Capacity</p>
+
+  <%= form.select :batterycapacity, ["2000mAh", "2500mAh","3000mAhm", "3500mAhm", "4000mAh", "4500mAh", "5000mAhm", "5500mAh","6000mAh", "6500mAh", "7000mAhm"]  %>
+ 
+  </div>
+
+  <div class="my-5">
+    <p>Network</p>
+  <%= form.select :network, ["2G", "3G","4G", "5G"]  %>
+  </div>
+  </div>
+
+   <p class=" font-bold text-2xl mb-2 mt-8"> Deal info:</p> 
+   <div class="shadow pl-8 lg:pl-24 py-4 rounded-xl border-2  bg-white border-gray-200 ">
+  <div class="my-5">
+  
+    <%= form.number_field :price , placeholder:"How much?", class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-4/5" %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :return? %>
+    <%= form.check_box :return, class: "block mt-2 h-5 w-5" %>
+  </div>
+
+
+
+  <div class="my-5">
+    <%= form.label :negotiable %>
+    <%= form.check_box :negotiable, class: "block mt-2 h-5 w-5" %>
+  </div>
+
+
+  <div class="my-5">
+    <%= form.label :return? %>
+    <%= form.check_box :return, class: "block mt-2 h-5 w-5" %>
+  </div>
+
+  <div class="rounded-md  outline-none">
+  <p>Condition</p>
+  <%= form.select :condition, ["New", "Used"]  %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :negotiable %>
+    <%= form.check_box :negotiable, class: "block mt-2 h-5 w-5" %>
+  </div>
+
+  <div class="my-5">
+   
+    <%= form.text_area :description,  placeholder:"Description: Add more details about your phone", class: "block shadow rounded-md border border-gray-200 outline-none px-3 pb-12 mt-2 w-4/5" %>
+  </div>
+  </div>
+
+<p class=" font-bold text-2xl mb-2 mt-8"> Location info:</p>
+<div class="shadow pl-8 lg:pl-24 py-4 rounded-xl border-2  bg-white border-gray-200 ">
+
+  <div class="my-5">
+    <%= form.label :State %>
+    <%= form.text_field :State, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-4/5" %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :lgc %>
+    <%= form.text_field :lgc, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-4/5" %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :area %>
+    <%= form.text_field :area, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-4/5" %>
+  </div>
+</div>
+
+
+  <div class="  ml-16 lg:ml-24 ">
+    <%= form.submit "Post phone", class: "mb-20 mt-8 rounded-xl py-4  bg-black text-white  font-medium cursor-pointer w-4/5 " %>
+  </div>
+<% end %>

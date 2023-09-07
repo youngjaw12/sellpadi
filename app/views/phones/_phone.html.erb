@@ -1,0 +1,105 @@
+<div id="<%= dom_id phone %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Name:</strong>
+    <%= phone.name %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Photo:</strong>
+   
+    
+    <%= image_tag phone.photo.variant (:thumb) %>
+
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Youtube:</strong>
+    <%= phone.youtube %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Brand:</strong>
+    <%= phone.brand %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Model:</strong>
+    <%= phone.model %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Color:</strong>
+    <%= phone.color %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Screensize:</strong>
+    <%= phone.screensize %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Ram:</strong>
+    <%= phone.ram %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Rom:</strong>
+    <%= phone.rom %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Batterytype:</strong>
+    <%= phone.batterytype %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Batterycapacity:</strong>
+    <%= phone.batterycapacity %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Network:</strong>
+    <%= phone.network %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Lgc:</strong>
+    <%= phone.lgc %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Area:</strong>
+    <%= phone.area %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Price:</strong>
+    <%= phone.price %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Description:</strong>
+    <%= phone.description %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Return:</strong>
+    <%= phone.return %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Condition:</strong>
+    <%= phone.condition %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Negotiable:</strong>
+    <%= phone.negotiable %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this phone", phone, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this phone', edit_phone_path(phone), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>
