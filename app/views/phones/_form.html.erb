@@ -1,3 +1,4 @@
+
 <%= form_with(model: phone, class: "contents") do |form| %>
   <% if phone.errors.any? %>
     <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
@@ -11,142 +12,150 @@
     </div>
   <% end %>
 
- 
+ <div class=" container mx-auto ">
 
-<p class=" font-bold text-2xl mb-2 mt-8"> Display info:</p>
-<div class="shadow pl-8 lg:pl-24 py-4 rounded-xl border-2  bg-white border-gray-200 ">
-  <div class="my-5 ">
+
+<div class="pl-8 lg:pl-24 py-4   ">
+<p class=" font-bold text-xl  mt-8"> Display info:</p>
+  <div class="mb-5 ">
  
-    <%= form.text_field :name,  placeholder:"Enter name of phone", class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-5/6 lg:w-4/5" %>
+    <%= form.text_field :name,  placeholder:"Add phone ad title", class: "border border-2  rounded-md border border-gray-200 outline-none px-9 py-2 mt-2 lg:w-4/5" %>
   </div>
 
-  <div class=" shadow rounded-md border border-gray-200 outline-none px-2  mt-2 w-5/6 lg:w-4/5"  >
+  <div class="  outline-none px-2  mt-2"  >
    <p class="pt-2 pb-8 font-bold">Supported photo format: JPG, PNG, </p> 
-    <%= form.file_field :photo %>
-  <p class="pt-8 pb-2 text-sm">Maximum upload size: 5mb</p>
+    <%= form.file_field :photo, class:"px-2 py-2  rounded-md"%>
+  <p class="pt-2 pb-2 text-sm">Maximum upload size: 5mb</p>
 
   <div class="my-5">
     
-    <%= form.url_field :youtube, placeholder:"Enter youtube link", class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-4/5"%>
+    <%= form.url_field :youtube, placeholder:"Enter youtube link", class: " border border-2   rounded-md border border-gray-200 outline-none  py-2 mt-2 "%>
   </div>
   </div>
 </div>   
 
-<p class=" font-bold text-2xl mb-2 mt-8"> Phone info:</p>
- <div class="shadow pl-8 lg:pl-24 py-4 rounded-xl border-2  bg-white border-gray-200 ">
-  <div class="my-5">
+
+ <div class="pl-8 lg:pl-24 py-4  ">
+ <p class=" font-bold text-xl  mt-8"> Phone info:</p>
+  <div class="mb-5">
   
-    <%= form.text_field :brand , placeholder:"Brand", class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-4/5" %>
+    <%= form.text_field :brand , placeholder:"Brand", class: "block border border-2 rounded-md border border-gray-200 outline-none px-9 py-2 mt-2 lg:w-4/5" %>
   </div>
 
   <div class="my-5">
    
-    <%= form.text_field :model , placeholder:"Model", class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-4/5" %>
+    <%= form.text_field :model , placeholder:"Model", class: "block border border-2 rounded-md border border-gray-200 outline-none px-9 py-2 mt-2  lg:w-4/5" %>
   </div>
 
   <div class="my-5">
     
-    <%= form.text_field :color , placeholder:"Color", class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-4/5" %>
+    <%= form.text_field :color , placeholder:"Color", class: "block border border-2 rounded-md border border-gray-200 outline-none px-9 py-2 mt-2 lg:w-4/5" %>
   </div>
 
   <div class="my-5">
     
-    <%= form.text_field :screensize , placeholder:"Screen size", class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-4/5" %>
+    <%= form.text_field :screensize , placeholder:"Screen size", class: "block border border-2 rounded-md border border-gray-200 outline-none px-9 py-2 mt-2 lg:w-4/5" %>
   </div>
 
-  <div >
-   <P>Ram</P>
-    <%= form.select :ram , ["512MB", "1GB", "2GB", "4GB", "8GB", "16GB"]%>
+  <div  class="flex">
+   
+    <%= form.select :ram , ["Ram","512MB", "1GB", "2GB", "4GB", "8GB", "16GB"], {}, :class=>"form-select rounded-lg  w-80 px-4 border border-2 border-primary"%>
   
   </div>
 
-  <div class="my-5">
-  <p>Rom</p>
-    <%= form.select :rom, ["8GB", "16GB", "32GB", "64GB", "128GB", "256GB", "512GB"] %>
+  <div class="my-5 flex">
+  
+    <%= form.select :rom, ["8GB", "16GB", "32GB", "64GB", "128GB", "256GB", "512GB"], {}, :class=>"form-select rounded-lg  w-80 px-4 border border-2 border-primary" %>
    
   </div>
 
-  <div class="my-5">
-  <p>Battery Type</p>
-    <%= form.select :batterytype, ["Non-removable", "Removable"] %>
+  <div class="my-5 ">
+ 
+    <%= form.select :batterytype, ["Non-removable", "Removable"], {}, :class=>"form-select rounded-lg  w-80 px-4 border border-2 border-primary" %>
   
   </div>
 
-  <div class="my-5">
-    <p>Battery Capacity</p>
+  <div class="my-5 flex">
+   
 
-  <%= form.select :batterycapacity, ["2000mAh", "2500mAh","3000mAhm", "3500mAhm", "4000mAh", "4500mAh", "5000mAhm", "5500mAh","6000mAh", "6500mAh", "7000mAhm"]  %>
+  <%= form.select :batterycapacity, ["2000mAh", "2500mAh","3000mAhm", "3500mAhm", "4000mAh", "4500mAh", "5000mAhm", "5500mAh","6000mAh", "6500mAh", "7000mAhm"] , {}, :class=>"form-select rounded-lg  w-80 px-4 border border-2 border-primary" %>
  
   </div>
 
-  <div class="my-5">
-    <p>Network</p>
-  <%= form.select :network, ["2G", "3G","4G", "5G"]  %>
+  <div class="my-5 flex">
+   
+  <%= form.select :network, ["2G", "3G","4G", "5G"] , {}, :class=>"form-select rounded-lg  w-80 px-4 border border-2 border-primary" %>
   </div>
   </div>
 
-   <p class=" font-bold text-2xl mb-2 mt-8"> Deal info:</p> 
-   <div class="shadow pl-8 lg:pl-24 py-4 rounded-xl border-2  bg-white border-gray-200 ">
-  <div class="my-5">
+   
+   <div class="pl-8 lg:pl-24 py-4 ">
+   <p class=" font-bold text-xl  mt-8 mb-4"> Deal info:</p> 
+  <div class="mb-5"> 
   
-    <%= form.number_field :price , placeholder:"How much?", class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-4/5" %>
+    <%= form.number_field :price , placeholder:" How much?",  class: "block border border-2 rounded-md border border-gray-200 outline-none px-9 py-2 mt-2 lg:w-4/5 " %>
   </div>
 
-  <div class="my-5">
-    <%= form.label :return? %>
+  <div class="my-5 flex">
+    <%= form.label :return?, class:"font-bold mr-14"%>
     <%= form.check_box :return, class: "block mt-2 h-5 w-5" %>
   </div>
 
 
 
-  <div class="my-5">
-    <%= form.label :negotiable %>
+  <div class="my-5 flex">
+    <%= form.label :negotiable , class:"font-bold mr-8"%>
     <%= form.check_box :negotiable, class: "block mt-2 h-5 w-5" %>
   </div>
 
 
-  <div class="my-5">
-    <%= form.label :return? %>
+  <div class="my-5 flex">
+    <%= form.label :return?, class:"font-bold mr-14"%>
     <%= form.check_box :return, class: "block mt-2 h-5 w-5" %>
   </div>
 
-  <div class="rounded-md  outline-none">
-  <p>Condition</p>
+  <div class="rounded-md  outline-none flex ">
+  <p class="font-bold mr-10">Condition</p>
   <%= form.select :condition, ["New", "Used"]  %>
   </div>
 
+
   <div class="my-5">
-    <%= form.label :negotiable %>
-    <%= form.check_box :negotiable, class: "block mt-2 h-5 w-5" %>
+   
+    <%= form.text_area :description,  placeholder:"Write a detailed description about your phone.", class: "block border border-gray-200  border-2 rounded-md  outline-none px-9 pb-12 mt-2 lg:w-4/5 " %>
+
+  </div>
+  </div>
+
+
+<div class="pl-8 lg:pl-24 py-4 ">
+<p class=" font-bold text-xl mt-8"> Location info:</p>
+  <div class="mb-5">
+  
+    <%= form.text_field :State, placeholder:"State", class: "block border border-2 rounded-md border border-gray-200 outline-none px-9 py-2 mt-2 lg:w-4/5" %>
   </div>
 
   <div class="my-5">
    
-    <%= form.text_area :description,  placeholder:"Description: Add more details about your phone", class: "block shadow rounded-md border border-gray-200 outline-none px-3 pb-12 mt-2 w-4/5" %>
-  </div>
-  </div>
-
-<p class=" font-bold text-2xl mb-2 mt-8"> Location info:</p>
-<div class="shadow pl-8 lg:pl-24 py-4 rounded-xl border-2  bg-white border-gray-200 ">
-
-  <div class="my-5">
-    <%= form.label :State %>
-    <%= form.text_field :State, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-4/5" %>
+    <%= form.text_field :lgc, placeholder:"L.G.C.", class: "block border border-2 rounded-md border border-gray-200 outline-none px-9 py-2 mt-2 lg:w-4/5" %>
   </div>
 
-  <div class="my-5">
-    <%= form.label :lgc %>
-    <%= form.text_field :lgc, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-4/5" %>
+  <div class="my-5 ">
+    
+    <%= form.text_field :area, placeholder:"Neighborhood", class: " px-9 block border border-2 rounded-md border border-gray-200 outline-none py-2 mt-2 lg:w-4/5" %>
   </div>
 
-  <div class="my-5">
-    <%= form.label :area %>
-    <%= form.text_field :area, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-4/5" %>
+
+  <div class="my-5 ">
+    
+    <%= form.number_field :person_id, id: :phone_person_id, value:current_person.id , type: :hidden %>
   </div>
+
+
+</div>
 </div>
 
-
-  <div class="  ml-16 lg:ml-24 ">
-    <%= form.submit "Post phone", class: "mb-20 mt-8 rounded-xl py-4  bg-black text-white  font-medium cursor-pointer w-4/5 " %>
+  <div class="  ml-8 lg:ml-24  ">
+    <%= form.submit "Post phone", class: "mb-20 mt-8 rounded-xl py-4  bg-primary block text-iconbg  font-bold cursor-pointer px-28 lg:w-4/5" %>
   </div>
 <% end %>

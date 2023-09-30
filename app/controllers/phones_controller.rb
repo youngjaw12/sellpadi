@@ -1,5 +1,9 @@
 class PhonesController < ApplicationController
+  
   before_action :set_phone, only: %i[ show edit update destroy ]
+  before_action :authenticate_person!, except: [:index, :show]
+  before_action :current_person, only: [:edit, :update, :destroy]
+ 
 
   # GET /phones or /phones.json
   def index
@@ -22,6 +26,8 @@ class PhonesController < ApplicationController
   # POST /phones or /phones.json
   def create
     @phone = Phone.new(phone_params)
+    
+
    
 
     respond_to do |format|
@@ -58,6 +64,10 @@ class PhonesController < ApplicationController
     end
   end
 
+
+
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_phone
@@ -66,6 +76,6 @@ class PhonesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def phone_params
-      params.require(:phone).permit(:name, :photo, :youtube, :brand, :model, :color, :screensize, :ram, :rom, :batterytype, :batterycapacity, :network, :lgc, :area, :price, :description, :return, :condition, :negotiable)
+      params.require(:phone).permit(:name, :photo, :youtube, :brand, :model, :color, :screensize, :ram, :rom, :batterytype, :batterycapacity, :network, :lgc, :area, :price, :description, :return, :condition, :state, :negotiable, :person_id)
     end
 end

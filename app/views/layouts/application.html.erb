@@ -11,9 +11,13 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="bg-slate-100">
-    <main class="container mx-auto mt-20 px-5 flex ">
+  <body class="bg-white ">
+    <% if notice.present? %>
+    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+  <% end %>
+   
+    
       <%= yield %>
-    </main>
+  
   </body>
 </html>

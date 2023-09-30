@@ -1,101 +1,136 @@
+
+<div class=" sm:mx-4 mx-2 h-200 w-300">
 <div id="<%= dom_id phone %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Name:</strong>
+  <p class="mb-5  mt-10 font-bold text-2xl ">
+    
     <%= phone.name %>
   </p>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Photo:</strong>
-   
+  <p class="my-5 ">
     
     <%= image_tag phone.photo.variant (:thumb) %>
+  </p>
+<hr class="h-px mx-0 my-2 bg-lightprimary border-0 dark:bg-gray-700">
 
+  
+    <div class="font-bold text-2xl bg-primary  px-4 py-2 rounded-md text-white">&#8358; <%= phone.price %></div>
+  
+  
+
+<div class="flex gap-20 mx-2">
+<div>
+  <p class="mb-5">
+    <p class="font-bold"><%= phone.negotiable %></p>
+    <p class=" text-sm text-lightprimary mb-1">Negotiable?</p>
+  </p>
+</div>
+
+<div>
+  <p class="mb-5">
+    <p class="font-bold"><%= phone.return %></p>
+    <p class=" text-sm text-lightprimary mb-1">Return?</p>
+  </p>
+  </div>
+  </div>
+<hr class="h-px mx-0 my-2 bg-lightprimary border-0 dark:bg-gray-700">
+
+<div class="font-bold text-2xl my-2">Specifications:</div>
+<div class="flex gap-20 mx-2">
+
+
+<div>
+
+  <p class="mb-5">
+    <p class="font-bold"><%= phone.condition %></p>
+    <p class=" text-sm text-lightprimary mb-1">Condition:</p>
   </p>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Youtube:</strong>
-    <%= phone.youtube %>
+  <p class="mb-5"> 
+    <p class=" font-bold"><%= phone.brand %></p>
+    <p class=" text-sm text-lightprimary mb-1">Brand:</p>
   </p>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Brand:</strong>
-    <%= phone.brand %>
+  <p class="mb-5">
+    <p class="font-bold"><%= phone.model %></p>
+    <p class=" text-sm text-lightprimary mb-1">Model:</p>
   </p>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Model:</strong>
-    <%= phone.model %>
+  <p class="mb-5">
+    <p class="font-bold"><%= phone.color %></p>
+    <p class=" text-sm text-lightprimary mb-1">Color:</p>
   </p>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Color:</strong>
-    <%= phone.color %>
+
+  <p class="mb-5">
+    <p class="font-bold"><%= phone.screensize %></p>
+    <p class=" text-sm text-lightprimary mb-1">Screensize:</p>
+  </p>
+</div>
+
+<div>
+  <p class="mb-5">
+    <p class="font-bold"><%= phone.ram %></p>
+    <p class=" text-sm text-lightprimary mb-1">Ram:</p>
   </p>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Screensize:</strong>
-    <%= phone.screensize %>
+ 
+  <p class="mb-5">
+    <p class="font-bold"><%= phone.rom %></p>
+    <p class=" text-sm text-lightprimary mb-1">Rom:</p>
   </p>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Ram:</strong>
-    <%= phone.ram %>
+  <p class="mb-5">
+    <p class="font-bold"><%= phone.batterytype %></p>
+    <p class=" text-sm text-lightprimary mb-1">Battery Type:</p>
   </p>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Rom:</strong>
-    <%= phone.rom %>
+  <p class="mb-5">
+    <p class="font-bold"><%= phone.batterycapacity %></p>
+    <p class=" text-sm text-lightprimary mb-1">Battery Capacity:</p>
   </p>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Batterytype:</strong>
-    <%= phone.batterytype %>
+  <p class="mb-5">
+    <p class="font-bold"><%= phone.network %></p>
+    <p class=" text-sm text-lightprimary mb-1">Network Band:</p>
   </p>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Batterycapacity:</strong>
-    <%= phone.batterycapacity %>
+
+</div>
+</div>
+</div>
+</div>
+
+<hr class="h-px mx-0 my-2 bg-lightprimary border-0 dark:bg-gray-700">
+
+<div class="font-bold text-2xl my-2 mx-2">Location Details:</div>
+
+
+<div class="mx-4">
+<div>
+
+  <p class="mb-5">
+    <p class="font-bold"><%= phone.state %></p>
+    <p class=" text-sm text-lightprimary mb-1">State:</p>
   </p>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Network:</strong>
-    <%= phone.network %>
+  <p class="mb-5">
+    <p class="font-bold"><%= phone.lgc %></p>
+    <p class=" text-sm text-lightprimary mb-1">Local Government:</p>
   </p>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Lgc:</strong>
-    <%= phone.lgc %>
+  <p class="mb-5">
+    <p class="font-bold"><%= phone.area %></p>
+    <p class=" text-sm text-lightprimary mb-1">Neighborhood:</p>
   </p>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Area:</strong>
-    <%= phone.area %>
+
+
+
+  <p class="mb- mt-5">
+    <strong class="font-bold">Description:</strong>
+    <p class="mt-2 mb-4 rounded-lg pb-10 pt-2 px-2 border-2 border-lightprimary"><%= phone.description%></p>
   </p>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Price:</strong>
-    <%= phone.price %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Description:</strong>
-    <%= phone.description %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Return:</strong>
-    <%= phone.return %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Condition:</strong>
-    <%= phone.condition %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Negotiable:</strong>
-    <%= phone.negotiable %>
-  </p>
 
   <% if action_name != "show" %>
     <%= link_to "Show this phone", phone, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
@@ -103,3 +138,5 @@
     <hr class="mt-6">
   <% end %>
 </div>
+</div>
+

@@ -1,12 +1,9 @@
-<%render ("phones/header/formheader") %>
-<div class=" mx-auto md:w-2/3 w-full  ">
+<div class="sticky top-0"><%=render "/header/formheader" %>
+</div>
 
 
-<div >
 
-  <h1 class="font-bold text-4xl mb-16">Provide details for your phone.</h1>
-
+<div class="mx-auto md:w-2/3 w-full  ">
   <%= render "form", phone: @phone %>
+</div>
 
-</div>
-</div>
